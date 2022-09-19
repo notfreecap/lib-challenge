@@ -8,8 +8,12 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: 'principal',
+        path: 'home',
         loadChildren: () => import('./principal/principal.module').then((m) => m.PrincipalModule)
+      },
+      {
+        path: 'profile',
+        loadChildren: () => import('lib-profile').then((m) => m.LibProfileModule)
       }
     ]
   }
