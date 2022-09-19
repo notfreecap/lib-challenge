@@ -5,6 +5,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatTabsModule } from '@angular/material/tabs'; 
+import { MatBadgeModule } from '@angular/material/badge'; 
+import { MatExpansionModule } from '@angular/material/expansion'; 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatButtonToggleModule } from '@angular/material/button-toggle'; 
 
 
 
@@ -18,7 +26,15 @@ import { MatDividerModule } from '@angular/material/divider';
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTabsModule,
+    MatBadgeModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatChipsModule,
+    MatButtonToggleModule
   ]
 })
 export class MaterialModule { }

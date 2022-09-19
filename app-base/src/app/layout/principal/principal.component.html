@@ -1,0 +1,156 @@
+
+<div 
+    fxLayout="row wrap" 
+    fxFlex="80" 
+    fxFlex.sm="100" 
+    fxFlex.xs="100" 
+    fxFlexOffset="10" 
+    fxFlexOffset.sm="0" 
+    fxFlexOffset.xs="0" 
+    fxLayoutAlign="center start">
+    <div fxFlex="grow">
+        <h2>Prueba de componentes</h2>
+        <mat-divider></mat-divider>
+    </div>
+    <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="space-around start" >
+        <div fxFlex="50" fxFlex.sm="100" fxFlex.xs="100" fxLayoutGap.sm="20px">            
+            <div class="example-action-buttons">
+                <h3>Acordeon example</h3>
+                <button mat-button (click)="accordion.openAll()">Expand All</button>
+                <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+            </div>            
+              <mat-accordion class="example-headers-align" multi>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Personal data
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      Type your name and age
+                      <mat-icon>account_circle</mat-icon>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+              
+                  <mat-form-field appearance="fill">
+                    <mat-label>First name</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+              
+                  <mat-form-field appearance="fill">
+                    <mat-label>Age</mat-label>
+                    <input matInput type="number" min="1">
+                  </mat-form-field>
+              
+                </mat-expansion-panel>
+                <mat-expansion-panel disabled>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Destination
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      Type the country name
+                      <mat-icon>map</mat-icon>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+              
+                  <mat-form-field appearance="fill">
+                    <mat-label>Country</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                </mat-expansion-panel>
+              
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Day of the trip
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      Inform the date you wish to travel
+                      <mat-icon>date_range</mat-icon>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+              
+                  <!-- <mat-form-field appearance="fill">
+                    <mat-label>Date</mat-label>
+                    <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly>
+                  </mat-form-field>
+                  <mat-datepicker #picker></mat-datepicker> -->
+                </mat-expansion-panel>
+              </mat-accordion>
+              
+              
+        </div>
+        <div fxFlex="35" fxFlex.sm="100" fxFlex.xs="100">
+            <mat-tab-group>
+                <mat-tab label="First"> 
+                    <br>
+                    <p>
+                        <span matBadge="4" matBadgeOverlap="false">Text with a badge</span>
+                    </p>
+
+                    <p>
+                        <span matBadge="1" matBadgeSize="large">Text with large badge</span>
+                    </p>
+
+                    <p>
+                        Button with a badge on the left
+                        <button mat-raised-button color="primary"
+                        matBadge="8" matBadgePosition="before" matBadgeColor="accent">
+                        Action
+                        </button>
+                    </p>
+
+                    <p>
+                        Button toggles badge visibility
+                        <button mat-raised-button matBadge="7" [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()">
+                            Hide
+                        </button>
+                    </p>
+
+                    <p>
+                        Icon with a badge
+                        <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
+                        <!-- Include text description of the icon's meaning for screen-readers -->
+                        <span class="cdk-visually-hidden">
+                        Example with a home icon with overlaid badge showing the number 15
+                        </span>
+                    </p>                                            
+                </mat-tab>
+                <mat-tab label="Second"> 
+                    <mat-form-field class="example-chip-list" appearance="fill">
+                        <mat-label>Favorite Fruits</mat-label>
+                        <mat-chip-list #chipList aria-label="Fruit selection">
+                            <mat-chip *ngFor="let fruit of fruits" (removed)="remove(fruit)">
+                            {{fruit.name}}
+                            <button matChipRemove>
+                                <mat-icon>cancel</mat-icon>
+                            </button>
+                            </mat-chip>
+                            <input placeholder="New fruit..."
+                                    [matChipInputFor]="chipList"
+                                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                    [matChipInputAddOnBlur]="addOnBlur"
+                                    (matChipInputTokenEnd)="add($event)">
+                        </mat-chip-list>
+                    </mat-form-field>
+                      
+                </mat-tab>
+                <mat-tab label="Third"> 
+                    <h4>Single selection</h4>
+                    <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
+                        <mat-button-toggle value="red">Red</mat-button-toggle>
+                        <mat-button-toggle value="green">Green</mat-button-toggle>
+                        <mat-button-toggle value="blue">Blue</mat-button-toggle>
+                    </mat-button-toggle-group>
+                
+                    <h4>Multiple selection</h4>
+                    <mat-button-toggle-group name="ingredients" aria-label="Ingredients" multiple>
+                        <mat-button-toggle value="flour">Flour</mat-button-toggle>
+                        <mat-button-toggle value="eggs">Eggs</mat-button-toggle>
+                        <mat-button-toggle value="sugar">Sugar</mat-button-toggle>
+                    </mat-button-toggle-group>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

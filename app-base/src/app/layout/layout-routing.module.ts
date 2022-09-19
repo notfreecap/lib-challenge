@@ -4,8 +4,14 @@ import { LayoutComponent } from './layout.component';
 
 const routes: Routes = [
   {
-    path: 'principal',
-    component: LayoutComponent
+    path: '',
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'principal',
+        loadChildren: () => import('./principal/principal.module').then((m) => m.PrincipalModule)
+      }
+    ]
   }
 ];
 
